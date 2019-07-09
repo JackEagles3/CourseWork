@@ -16,12 +16,13 @@ public class LogIn_Controller {
             String UserName;
             String Pass;
             String RoleName;
+            System.out.println("UserID,UserName,Password,RoleName");
             while (results.next()){
                 UserID = results.getInt(1);
                 UserName = results.getString(2);
                 Pass = results.getString(3);
                 RoleName = results.getString(4);
-                System.out.println(UserID + " " + UserName + " " + Pass + " " + RoleName);
+                System.out.println(UserID + "," + UserName + "," + Pass + "," + RoleName);
 
             }
 
@@ -62,9 +63,9 @@ public class LogIn_Controller {
         try{
 
             //Lets you insert into the Login table
-            PreparedStatement ps = Main.db.prepareStatement("UPDATE LogIn SET  Username = ?, Password = ?, RoleName = ? WHERE UserID=? AND Password != null");
+            PreparedStatement ps = Main.db.prepareStatement("UPDATE LogIn SET  Username = ?, Password = ?, RoleName = ? WHERE UserID=?");
 
-            //ps.setString(1, UserName);
+            ps.setString(1, UserName);
             ps.setString(2, Password);
             ps.setString(3, RoleName);
             ps.setInt(4, UserID);

@@ -14,12 +14,11 @@ public class Main {
         openDatabase("Inventory Database.db");
 
         //Code for manipulating the data in the database
-        LogIn_Controller.ReadDatebase();
-        //LogIn_Controller.WriteToDatabase("Andy", "AndyPassowrd", "Staff");
-       // LogIn_Controller.DeleteFromDatabase(2);
-        LogIn_Controller.UpdateDatabase(  "Dan1", 1, null,null );
+
 
         LogIn_Controller.ReadDatebase();
+
+        Inventory_Controller.ReadDatebase();
 
         //Closes Database
         closeDatabase();
